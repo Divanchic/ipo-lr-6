@@ -1,14 +1,14 @@
-import random
-sumnum = 0
-rows = random.randint(4,8)
-col = random.randint(4,8)
-mat = [-3, -5, -2, -12, 0, 15, 4, 7, 2]
-matr = [[random.choice(mat) for i in range(col)] for j in range(rows)]
-for i in matr:
-    print(*[f"{x:>5}" for x in i])
-    for a in i:
-        if a%3==0:
-            sumnum += a
-print(sumnum)
+import random#импортируем модуль рандома
+sumnum = 0#вводим переменную 
+rows = random.randint(4,8)#создаем переменную с строками размером от 4 до 8
+col = random.randint(4,8)##создаем переменную с колонками размером от 4 до 8
+mat = [-3, -5, -2, -12, 0, 15, 4, 7, 2]#создаем список числе которые после будут в массиве
+matr = [[random.choice(mat) for i in range(col)] for j in range(rows)]#создаем массив в который рандмно ставляем числа из списка
+for i in matr:#перебираем элементы массива
+    print(*[f"{x:>5}" for x in i])#выводим элементы массива 
+    for a in i:#перебираем элементы...элементов массива
+        if a%3==0:#если элемент элемента делиться на 3 без остатка
+            sumnum += a#сумируем его с переменной
+print(sumnum)#выводим переменную
 
    
