@@ -1,5 +1,19 @@
-lst = (list(map(str, input("введите текст").split())))
-txt = open(r"C:\Users\KudlaIva_89\Desktop\Лабы Кудлаш\lr6\task4\text.txt", "r", encoding = "UTF-8") 
-rd = txt.read()
-if rd == lst:
-    print(rd)
+lst = (list(map(str, input("введите текст").split())))#пользователь вводит подстроку
+txt = open(r"C:\Users\KudlaIva_89\Desktop\Лабы Кудлаш\lr6\task4\text.txt", "r", encoding = "UTF-8")#открываем файл txt в режиме чтения
+rd = txt.read()#rd равняется тексту из файла
+words = []#создаем список слов 
+for i in "-.,!?;:—\"'": #Убираем из текста знаки препинания, они будут мешать
+        text = text.replace(i, " ")
+lst_new = rd.split()#разделяем текст пробелами
+for i in lst_new:#перебираем все элементы текста 
+    if lst in i:#если в элементах текста встречаются совпадения с подстрокой
+        words.append(i)#создем список из слов c подстрокой
+print("Строки с подстрокой:") #Выводим список из слов с подстрокой
+for i in words:#выводим по порядку все элементы списка слов с подстрокой
+    print(i)
+print("Количество строк:")
+print(len(words))#Выводим количество строк
+words = sorted(words, key = len) # Сортируем список по длине
+print("Cтроки по длине: ") # Выводим сортированные по длине строки
+for i in words:
+    print(i)
